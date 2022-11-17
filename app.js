@@ -18,7 +18,7 @@ app.use('/v1', require('./src/routes'));
 
 //escucha al puerto 4001
 app.listen(process.env.PORT, ()=>{
-  console.log("The server is Alive");
+  console.log("Server Running");
 });
 
-app.get('/', (req, res)=> res.send('hola Mundo es mi respuesta'));
+app.get('/', (req, res)=> res.send('Se conecto correctamente'));
