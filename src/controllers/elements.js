@@ -9,11 +9,6 @@ function obtenerElements(req, res){
 
 //CREATE (POST) 
 function crearElement(req, res){
-
-/*     const errors = validationResult(req);
-    if( !errors.isEmpty()){
-        return res.status(400).json(errors);
-    } */
     const info = req.body;
     const elem = new Element(info)
     elem.save()
@@ -23,7 +18,6 @@ function crearElement(req, res){
 //DELETE
 function eliminarElement(req, res){
     const name = req.body.elementName;
-    console.log("Valor a eliminar: "+ name);
     Element.findOneAndDelete({nombre:name})
     .then(data => res.send(data))
     .catch(err => res.status(500).send(err))
@@ -36,7 +30,7 @@ function modificarElement(req, res){
     Element.findByIdAndUpdate(idname, nuevaInfo)
         .then (data =>{
                 Element.findById(idname)
-                .then((info) => res.send(info))
+                .then((info) => res.status(200).send(info))
             })
 }
 

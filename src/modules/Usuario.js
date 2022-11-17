@@ -9,7 +9,7 @@ const SchemaUsuario = mongoose.Schema({
     email: {type: String, unique: true, required: true, match: [/\S+@\S+\.\S+/, "correo inválido"] , index: true},
     username: {type: String, unique: true, require: true},
     hash: String,//contraseña cifrada
-    salt: String,//llave para desifrar
+    salt: String,//llave para descifrar
     tarjeta: String,
     tipo: {type: String, enum: ['Vendedor', 'Comprador']},
 }, {timestamp: true})
