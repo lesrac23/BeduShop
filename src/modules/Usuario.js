@@ -13,7 +13,7 @@ const SchemaUsuario = mongoose.Schema({
     tarjeta: String,
     tipo: {type: String, enum: ['Vendedor', 'Comprador']},
 }, {timestamp: true})
-//validacion en los campos unique
+//validación en los campos unique
 SchemaUsuario.plugin(UniqueValidator, {message: 'El usuario ya existe'});
 //todas las funcionalidades del esquema sin arroy function para construir methods
 SchemaUsuario.methods.crearContrasena= function(password){
