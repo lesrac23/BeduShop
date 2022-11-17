@@ -2,8 +2,6 @@ console.log("I'm Alive");
 
 const mongoose = require("mongoose");
 
-
-
 mongoose.connect(process.env.MONGOURI);
 
 
