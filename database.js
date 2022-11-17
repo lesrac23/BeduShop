@@ -2,12 +2,10 @@ console.log("I'm Alive");
 
 const mongoose = require("mongoose");
 
-const db = 'BeduShop';
-const dbUser = 'lesrac23';
-const dbPass = 'Adidas2022'; 
 
-const uri = `mongodb+srv://${dbUser}:${dbPass}@cluster0.g0jumqp.mongodb.net/${db}?retryWrites=true&w=majority`
-mongoose.connect(uri);
+
+mongoose.connect(process.env.MONGOURI);
+
 
 //Definir esquema, recibe informacion
 const ProductoSchema = mongoose.Schema({
